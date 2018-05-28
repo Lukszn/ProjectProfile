@@ -1,3 +1,3 @@
 # ProjectProfile
 
-I'm working now with this project
+I'm working now with this project.
