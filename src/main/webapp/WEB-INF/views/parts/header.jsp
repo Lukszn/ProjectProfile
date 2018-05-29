@@ -22,7 +22,6 @@
 				<li class="nav-item"><a class="nav-link" href="<c:url value="/admin"/>"><strong>Admin</strong></a>
 				</li>
 				</c:if>
-				
 				<li class="nav-item"><a class="nav-link" href="<c:url value="/logout"/>"><strong>Logout</strong></a>
 				</li>
 			</ul>
