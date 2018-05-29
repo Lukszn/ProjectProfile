@@ -9,7 +9,7 @@
 	crossorigin="anonymous">
 <header>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
-		<span class="navbar-brand mb-0 h1"><a style="color:white; text-decoration: none;" href="<c:url value="/"/>"><strong>Project->Profile</strong></a></span>
+		<span class="navbar-brand mb-0 h1"><a style="color:white; text-decoration: none;" href="<c:url value="/"/>"><strong>Project -> Profile</strong></a></span>
 		
 		      </li>
 			</ul>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style><%@ include file="/WEB-INF/views/parts/header.jsp" %></style>
-<title>Insert title here</title>
+<title>Insert title heree</title>
 </head>
 <body>
 sss
