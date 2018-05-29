@@ -24,7 +24,8 @@ public class HomeController {
 	@Autowired
 	UserRepository userRepository;
 	
-
+	
+	
 	@RequestMapping("/")
 	public String loginRegister(HttpSession session, Model model) {
 		if(session.getAttribute("user_id")!=null) {
