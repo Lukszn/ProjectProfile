@@ -90,8 +90,6 @@ public class HomeController {
 		return "redirect:./";
 	}
 	
-	
-	
 	@RequestMapping("/admin")
 	public String adminPage() {
 		return "adminPage";
@@ -101,6 +99,4 @@ public class HomeController {
 	public String notPermission() {
 		return "/errors/notAccess";
 	}
-	
-
 }

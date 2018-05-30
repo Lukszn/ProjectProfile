@@ -12,8 +12,8 @@
 <body>
 <%@ include file="/WEB-INF/parts/header.jsp" %>
     <h1>Project  ->  Profile</h1>
-    <p>Index główny</p>
-    <a href="<c:url value="/register"/>"><strong>Register</strong></a>
+
+  <p>Welcome. That project was created by Łukasz Sznurowski.</p>
 
 <div>
 	<h3><strong>${message}</strong></h3>
