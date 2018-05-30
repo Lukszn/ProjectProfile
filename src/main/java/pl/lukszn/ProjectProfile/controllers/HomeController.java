@@ -90,13 +90,17 @@ public class HomeController {
 		return "redirect:./";
 	}
 	
+	
+	
 	@RequestMapping("/admin")
-	public String adminPanel() {
-		return "adminPanel";
+	public String adminPage() {
+		return "adminPage";
 	}
 	
 	@RequestMapping("/not_permission")
 	public String notPermission() {
 		return "/errors/notAccess";
 	}
+	
+
 }

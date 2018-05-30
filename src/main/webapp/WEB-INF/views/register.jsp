@@ -3,21 +3,14 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ page isELIgnored="false" %>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
-<title>Title</title>
-<style>
-
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>register</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/parts/header.jsp" %>
-	<a href="/register"/><strong>Register</strong></a>
-    <hr>
-    <c:url var="addUrl" value="/register"/>
+<c:url var="addUrl" value="/register/register"/>
     <form:form method="post" role="form" action="${addUrl}" modelAttribute="user">
     
 		<h1>Create an Account</h1>

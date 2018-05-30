@@ -62,10 +62,7 @@ public class UserController {
 		}	
 	}
 	
-	@RequestMapping("/editlist")
-	public String editWordList() {
-		return "usersEditList";
-	}
+
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String editUserForm(Model model, @PathVariable long id) {
@@ -85,10 +82,6 @@ public class UserController {
 		return "redirect:/admin/user/editlist";
 	}
 	
-	@RequestMapping("/delete")
-	public String deleteWord(Model model) {
-		return "deleteUser";
-	}
 
 	@RequestMapping("/read/{id}")
 	public String read(@PathVariable long id) {
