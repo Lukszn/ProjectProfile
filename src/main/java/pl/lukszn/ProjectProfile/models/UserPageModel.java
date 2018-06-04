@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -61,7 +62,136 @@ public class UserPageModel {
 	
 	@Column(name = "aboutUser")
 	private String aboutUser;
-		
+	
+	@OneToOne
+	private UserModel userModel;
+
+	public UserPageModel(String title, String firstName, String lastName, Date birthdate, String phoneNumber,
+			String education, String experience, String abilities, String interests, String projects,
+			String aboutUser) {
+		this.title = title;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthdate = birthdate;
+		this.phoneNumber = phoneNumber;
+		this.education = education;
+		this.experience = experience;
+		this.abilities = abilities;
+		this.interests = interests;
+		this.projects = projects;
+		this.aboutUser = aboutUser;
+	}
+	
+	public UserPageModel() {
+	}
+	
+	//
+	//Getters and setters:
+	//
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Date getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
+	public String getExperience() {
+		return experience;
+	}
+
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	public String getAbilities() {
+		return abilities;
+	}
+
+	public void setAbilities(String abilities) {
+		this.abilities = abilities;
+	}
+
+	public String getInterests() {
+		return interests;
+	}
+
+	public void setInterests(String interests) {
+		this.interests = interests;
+	}
+
+	public String getProjects() {
+		return projects;
+	}
+
+	public void setProjects(String projects) {
+		this.projects = projects;
+	}
+
+	public String getAboutUser() {
+		return aboutUser;
+	}
+
+	public void setAboutUser(String aboutUser) {
+		this.aboutUser = aboutUser;
+	}
+
+	public UserModel getUserModel() {
+		return userModel;
+	}
+
+	public void setUserModel(UserModel userModel) {
+		this.userModel = userModel;
+	}
 	
 
 }

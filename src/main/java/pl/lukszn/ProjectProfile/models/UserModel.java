@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -35,6 +36,9 @@ public class UserModel {
 	private String email;
 	private String permission;
 
+	@OneToOne(mappedBy="userModel")
+	private UserPageModel userPageModel;
+	
 	public UserModel(String login, String password, String email) {
 		this.login = login;
 		this.password = password;
