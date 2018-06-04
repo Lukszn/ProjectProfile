@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import pl.lukszn.ProjectProfile.models.User;
+import pl.lukszn.ProjectProfile.models.UserModel;
 
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
@@ -29,7 +29,7 @@ public class ProfileController {
 	@RequestMapping("")
 	public String showProfile(HttpSession session, Model model) {
 		long userId = (Long) session.getAttribute("user_id");
-		User user = userRepository.findOne(userId);
+		UserModel user = userRepository.findOne(userId);
 		
 		model.addAttribute("user", user);
 	
@@ -43,7 +43,7 @@ public class ProfileController {
 	
 	@RequestMapping(value = "/email", method = RequestMethod.POST)
 	public String changeEmail(HttpSession session, Model model, @RequestParam String mail, @RequestParam String confirmMail, @RequestParam String password) {
-		User user = userRepository.findOne((Long) session.getAttribute("user_id"));
+		UserModel user = userRepository.findOne((Long) session.getAttribute("user_id"));
 		if(BCrypt.checkpw(password, user.getPassword())) {
 			if(mail.equals(confirmMail)) {
 				user.setEmail(mail);
@@ -68,7 +68,7 @@ public class ProfileController {
 	
 	@RequestMapping(value = "/password", method = RequestMethod.POST)
 	public String changePassword(HttpSession session, Model model, @RequestParam String newPassword, @RequestParam String confirmNewPassword, @RequestParam String password) {
-		User user = userRepository.findOne((Long) session.getAttribute("user_id"));
+		UserModel user = userRepository.findOne((Long) session.getAttribute("user_id"));
 		if(BCrypt.checkpw(password, user.getPassword())) {
 			if(newPassword.equals(confirmNewPassword)) {
 				user.setEmail(newPassword);

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import pl.lukszn.ProjectProfile.models.User;
+import pl.lukszn.ProjectProfile.models.UserModel;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
@@ -31,7 +31,7 @@ public class HomeController {
 		if(session.getAttribute("user_id")!=null) {
 			return "index";
 		}else {
-			User user = new User();
+			UserModel user = new UserModel();
 			model.addAttribute("user",user);
 			return "login";
 		}
@@ -41,7 +41,7 @@ public class HomeController {
 	public String login(Model model, @RequestParam String login, @RequestParam String password, HttpSession session) {
 		String wrong = "";
 		try {
-			User user = userRepository.findByLogin(login);
+			UserModel user = userRepository.findByLogin(login);
 			if (BCrypt.checkpw(password, user.getPassword())) {
 				session.setAttribute("user_id", user.getId());
 				session.setAttribute("user_permission", user.getPermission());
@@ -52,7 +52,7 @@ public class HomeController {
 		} catch (NullPointerException e) {
 			wrong = "WRONG LOGIN!!";
 		}
-			User user = new User();
+			UserModel user = new UserModel();
 			model.addAttribute("user", user);
 			model.addAttribute("wrong", wrong);
 			return "login";
@@ -65,7 +65,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String addUser(@Valid User user, BindingResult result, Model model, HttpSession session) {
+	public String addUser(@Valid UserModel user, BindingResult result, Model model, HttpSession session) {
 
 		if(result.hasErrors()) {
 			return "login";

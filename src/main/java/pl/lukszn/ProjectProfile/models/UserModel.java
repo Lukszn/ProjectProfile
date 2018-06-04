@@ -18,7 +18,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class UserModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,13 +35,13 @@ public class User {
 	private String email;
 	private String permission;
 
-	public User(String login, String password, String email) {
+	public UserModel(String login, String password, String email) {
 		this.login = login;
 		this.password = password;
 		this.email = email;
 	}
 
-	public User() {
+	public UserModel() {
 	}
 
 	public String getLogin() {
