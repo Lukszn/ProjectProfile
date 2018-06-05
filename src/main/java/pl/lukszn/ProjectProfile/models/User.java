@@ -19,34 +19,34 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
-public class UserModel {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
 	@Column(unique = true)
 	@NotBlank
 	@Size(min=4,max=20)
 	private String login;
+	
 	@NotBlank
 	private String password;
+	
 	@Column(unique = true)
 	@Email
 	@NotBlank
 	private String email;
+	
 	private String permission;
-
-	@OneToMany(mappedBy="userPageModel")
-	private List<UserPageModel> userPageModel;
 	
-	
-	public UserModel(String login, String password, String email) {
+	public User(String login, String password, String email) {
 		this.login = login;
 		this.password = password;
 		this.email = email;
 	}
 
-	public UserModel() {
+	public User() {
 	}
 
 	public String getLogin() {
@@ -85,12 +85,4 @@ public class UserModel {
 		this.permission = permissions;
 	}
 	
-	public List<UserPageModel> getUserPageModel() {
-		return userPageModel;
-	}
-
-	public void setUserPageModel(List<UserPageModel> userPageModel) {
-		this.userPageModel = userPageModel;
-	}
-
 }

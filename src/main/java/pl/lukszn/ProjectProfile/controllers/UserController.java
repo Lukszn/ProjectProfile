@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import pl.lukszn.ProjectProfile.models.UserModel;
-
+import pl.lukszn.ProjectProfile.models.User;
+import pl.lukszn.ProjectProfile.models.UserPage;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
@@ -30,19 +30,19 @@ public class UserController {
 	
 	
 	@ModelAttribute(name = "users")
-	public List<UserModel> getUsers(){
+	public List<User> getUsers(){
 		return userRepository.findAll();
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addUserForm(Model model) {
-		UserModel user = new UserModel();
+		User user = new User();
 		model.addAttribute("user", user);
 		return "addUserForm";
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addUser(@ModelAttribute UserModel user, Model model, HttpSession session) {
+	public String addUser(@ModelAttribute User user, Model model, HttpSession session) {
 		String password = user.getPassword();
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 		user.setPassword(hashedPassword);
@@ -50,7 +50,7 @@ public class UserController {
 		
 		if(session.getAttribute("user_id")!=null) {
 			model.addAttribute("addedUser", user);
-			user = new UserModel();
+			user = new User();
 			model.addAttribute("user", user);
 			return "addUserForm";
 		}else {
@@ -66,14 +66,14 @@ public class UserController {
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String editUserForm(Model model, @PathVariable long id) {
-		UserModel user = userRepository.findOne(id);
+		User user = userRepository.findOne(id);
 		model.addAttribute("user",user);
 		return "editUserForm";
 	}
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-	public String editUser(@ModelAttribute UserModel user, @PathVariable long id, @RequestParam String permission) {
-		UserModel userToUpdate = userRepository.findOne(id);
+	public String editUser(@ModelAttribute User user, @PathVariable long id, @RequestParam String permission) {
+		User userToUpdate = userRepository.findOne(id);
 		userToUpdate.setLogin(user.getLogin());
 		userToUpdate.setPermission(permission);
 		userToUpdate.setPassword(user.getPassword());
@@ -90,9 +90,17 @@ public class UserController {
 	
 	@RequestMapping("/delete/{id}")
 	public String delete(@PathVariable long id) {
-		UserModel user = userRepository.findOne(id);
+		User user = userRepository.findOne(id);
 		userRepository.delete(user);
 		return "redirect:/admin/user/delete";
 	}
+	
+//	@RequestMapping(value = "/add_userPage", method = RequestMethod.GET)
+//	public String addUserPageForm(Model model) {
+//		UserPage userPage = new UserPage();
+//		model.addAttribute("userPage", userPage);
+//		return "addUserPageForm";
+//	}
+//	
 
 }

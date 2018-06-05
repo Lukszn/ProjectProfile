@@ -2,10 +2,10 @@ package pl.lukszn.ProjectProfile.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import pl.lukszn.ProjectProfile.models.UserModel;
+import pl.lukszn.ProjectProfile.models.User;
 
-public interface UserRepository extends JpaRepository <UserModel, Long> {
+public interface UserRepository extends JpaRepository <User, Long> {
 
-	UserModel findByLogin(String login);
+	User findByLogin(String login);
 	
 }

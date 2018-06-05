@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -17,7 +15,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "userPageModel")
-public class UserPageModel {
+public class UserPage {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,10 +62,8 @@ public class UserPageModel {
 	@Column(name = "aboutUser")
 	private String aboutUser;
 	
-	@ManyToOne
-	private UserModel userModel;
 
-	public UserPageModel(String title, String firstName, String lastName, Date birthdate, String phoneNumber,
+	public UserPage(String title, String firstName, String lastName, Date birthdate, String phoneNumber,
 			String education, String experience, String abilities, String interests, String projects,
 			String aboutUser) {
 		this.title = title;
@@ -83,7 +79,7 @@ public class UserPageModel {
 		this.aboutUser = aboutUser;
 	}
 	
-	public UserPageModel() {
+	public UserPage() {
 	}
 	
 	//
@@ -186,13 +182,6 @@ public class UserPageModel {
 		this.aboutUser = aboutUser;
 	}
 
-	public UserModel getUserModel() {
-		return userModel;
-	}
-
-	public void setUserModel(UserModel userModel) {
-		this.userModel = userModel;
-	}
 	
 
 }
