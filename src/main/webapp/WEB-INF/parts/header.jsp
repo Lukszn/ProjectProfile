@@ -23,7 +23,7 @@
       	</c:if></li>
      
     </ul>
-    <a href="<c:url value="/add_userPage"/>">Add Page</a>
+    <a href="<c:url value="/add_userPageModel"/>">Add Page</a>
    
    <c:if test="${sessionScope.user_permission == null}">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
