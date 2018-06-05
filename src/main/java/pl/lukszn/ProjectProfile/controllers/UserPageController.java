@@ -2,6 +2,8 @@ package pl.lukszn.ProjectProfile.controllers;
 
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import pl.lukszn.ProjectProfile.models.UserModel;
 import pl.lukszn.ProjectProfile.models.UserPageModel;
 import pl.lukszn.ProjectProfile.repositories.UserPageRepository;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
+
 
 
 @Controller
@@ -27,16 +31,27 @@ public class UserPageController {
 	@Autowired
 	UserRepository userRepository;
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	
+//	@RequestMapping("/myPage")
+//	public String addUserPage(Model model,HttpSession session) {
+//		
+//		UserModel userModel= userRepository.findOne((Long) session.getAttribute("user"));
+//		List<userModel> beers = user.getBeers();
+//		model.addAttribute("beers", beers);
+//		return "myBeers";
+//	}
+//	
+	
+	@RequestMapping(value = "/add_userPage", method = RequestMethod.GET)
 	public String addUserPageForm(Model model, HttpSession ses) {
 		UserPageModel newUserPageModel = new UserPageModel();
 		model.addAttribute("userPageModel", newUserPageModel);
-		return "addUserPageForm";
+		return "addUserPage";
 	}
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/add_userPage", method = RequestMethod.POST)
 	public String addUserPageModel(@ModelAttribute UserPageModel userPageModel, Model model) {
 		userPageRepository.save(userPageModel);
-		return "addUserPageForm";
+		return "addUserPage";
 	}
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)

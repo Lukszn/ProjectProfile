@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
@@ -15,7 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "userPage")
+@Table(name = "userPageModel")
 public class UserPageModel {
 	
 	@Id
@@ -63,7 +64,7 @@ public class UserPageModel {
 	@Column(name = "aboutUser")
 	private String aboutUser;
 	
-	@OneToOne
+	@ManyToOne
 	private UserModel userModel;
 
 	public UserPageModel(String title, String firstName, String lastName, Date birthdate, String phoneNumber,

@@ -26,14 +26,14 @@ public class UserPanelController {
 	UserPageRepository userPageRepository;
 
 	
-	@RequestMapping(value = "/add_userPageModel/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/add_userPageModel", method = RequestMethod.GET)
 	public String addUserPageModelGET(Model model, HttpSession session, @PathVariable long id) {
 		UserPageModel userPageModel = new UserPageModel();
 		model.addAttribute("userPageModel", userPageModel);
 		return "userAddPageModel";
 	}
 	
-	@RequestMapping(value = "/add_userPageModel/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "/add_userPageModel", method = RequestMethod.POST)
 	public String addUserPageModelPOST(@PathVariable long id, @ModelAttribute UserPageModel userPageModel, Model model) {
 		
 		userPageRepository.save(userPageModel);

@@ -10,12 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+
 
 @Entity
 @Table(name = "users")
@@ -36,8 +36,9 @@ public class UserModel {
 	private String email;
 	private String permission;
 
-	@OneToOne(mappedBy="userModel")
-	private UserPageModel userPageModel;
+	@OneToMany(mappedBy="userPageModel")
+	private List<UserPageModel> userPageModel;
+	
 	
 	public UserModel(String login, String password, String email) {
 		this.login = login;
@@ -82,6 +83,14 @@ public class UserModel {
 
 	public void setPermission(String permissions) {
 		this.permission = permissions;
+	}
+	
+	public List<UserPageModel> getUserPageModel() {
+		return userPageModel;
+	}
+
+	public void setUserPageModel(List<UserPageModel> userPageModel) {
+		this.userPageModel = userPageModel;
 	}
 
 }
