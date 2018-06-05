@@ -103,4 +103,12 @@ public class UserController {
 //	}
 //	
 
+	@RequestMapping("/myPages")
+	public String myPages(Model model,HttpSession session) {
+		
+		User user = userRepository.findOne((Long) session.getAttribute("user"));
+		List<UserPage> userPages = user.getUserPages();
+		model.addAttribute("userPages", userPages);
+		return "myPages";
+	}
 }

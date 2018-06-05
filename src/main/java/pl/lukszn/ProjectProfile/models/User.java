@@ -40,6 +40,18 @@ public class User {
 	
 	private String permission;
 	
+	@OneToMany(mappedBy = "user")
+	private List<UserPage> userPages = new ArrayList<UserPage>();
+	
+	public List<UserPage> getUserPages() {
+		return userPages;
+	}
+
+	public void setUserPages(List<UserPage> userPages) {
+		this.userPages = userPages;
+	}
+	
+
 	public User(String login, String password, String email) {
 		this.login = login;
 		this.password = password;

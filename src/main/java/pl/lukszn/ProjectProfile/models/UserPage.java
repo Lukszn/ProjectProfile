@@ -7,14 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
+
+
 @Entity
-@Table(name = "userPageModel")
+@Table(name = "user_pages")
 public class UserPage {
 	
 	@Id
@@ -35,10 +39,7 @@ public class UserPage {
 	private String lastName;
 	
 	@NotBlank
-	@Pattern(regexp = "^(?:(?:(?:0?[13578]|1[02])(\\/|-|\\.)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/|-|\\.)"
-			+ "(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/|-|\\.)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)"
-			+ "?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/|-|\\.)"
-			+ "(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$")
+	@Type(type="date")
 	private Date birthdate;
 	
 	@Column(name = "phoneNumber")
@@ -62,6 +63,10 @@ public class UserPage {
 	@Column(name = "aboutUser")
 	private String aboutUser;
 	
+	
+	@ManyToOne
+	private User user;
+
 
 	public UserPage(String title, String firstName, String lastName, Date birthdate, String phoneNumber,
 			String education, String experience, String abilities, String interests, String projects,
@@ -85,6 +90,14 @@ public class UserPage {
 	//
 	//Getters and setters:
 	//
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 	public long getId() {
 		return id;
