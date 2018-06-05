@@ -42,9 +42,12 @@ public class UserPageController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addPage(@ModelAttribute UserPage userPage, Model model, HttpSession session) {
 		User user = userRepository.findOne((Long) session.getAttribute("user_id"));
+		Date date = new Date();
+		userPage.setCreated(date);
+		userPage.setLastUpdate(date);
 		userPage.setUser(user);
 		userPageRepository.save(userPage);
-		model.addAttribute("addedUserPage", userPage);
+		model.addAttribute("addedWordGroup", userPage);
 		userPage = new UserPage();
 		model.addAttribute("userPage", userPage);
 		return "addUserPageForm";

@@ -95,20 +95,4 @@ public class UserController {
 		return "redirect:/admin/user/delete";
 	}
 	
-//	@RequestMapping(value = "/add_userPage", method = RequestMethod.GET)
-//	public String addUserPageForm(Model model) {
-//		UserPage userPage = new UserPage();
-//		model.addAttribute("userPage", userPage);
-//		return "addUserPageForm";
-//	}
-//	
-
-	@RequestMapping("/myPages")
-	public String myPages(Model model,HttpSession session) {
-		
-		User user = userRepository.findOne((Long) session.getAttribute("user"));
-		List<UserPage> userPages = user.getUserPages();
-		model.addAttribute("userPages", userPages);
-		return "myPages";
-	}
 }

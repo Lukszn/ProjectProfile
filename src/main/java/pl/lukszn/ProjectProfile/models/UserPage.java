@@ -13,14 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Type;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-
-
-
 
 
 @Entity
@@ -37,6 +31,14 @@ public class UserPage {
 	
 	@Column(unique = true)
 	private String name;
+	
+	@Column
+	@Type(type="date")
+	private Date created;
+	
+	@Column
+	@Type(type="timestamp")
+	private Date lastUpdate;
 	
 	@ManyToOne
 	private User user;
@@ -70,6 +72,22 @@ public class UserPage {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
 	}
 
 	public User getUser() {
