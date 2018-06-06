@@ -23,6 +23,9 @@ public class Account {
 	@ManyToOne
 	private User user;
 	
+	@ManyToOne
+	private Page page;
+	
 	public Account() {
 	}
 
@@ -57,6 +60,16 @@ public class Account {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
+	}
+	
+	
 	
 	
 }
