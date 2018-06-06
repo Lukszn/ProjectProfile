@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 import pl.lukszn.ProjectProfile.models.User;
-import pl.lukszn.ProjectProfile.models.UserPage;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
@@ -24,11 +22,10 @@ import pl.lukszn.ProjectProfile.repositories.UserRepository;
 @RequestMapping("/admin/user")
 public class UserController {
 
-	
 	@Autowired
 	UserRepository userRepository;
 	
-	
+		
 	@ModelAttribute(name = "users")
 	public List<User> getUsers(){
 		return userRepository.findAll();
@@ -47,7 +44,6 @@ public class UserController {
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 		user.setPassword(hashedPassword);
 		userRepository.save(user);
-		
 		if(session.getAttribute("user_id")!=null) {
 			model.addAttribute("addedUser", user);
 			user = new User();

@@ -24,7 +24,7 @@ public class HomeController {
 	@Autowired
 	UserRepository userRepository;
 	
-	
+		
 	
 	@RequestMapping("/")
 	public String loginRegister(HttpSession session, Model model) {
