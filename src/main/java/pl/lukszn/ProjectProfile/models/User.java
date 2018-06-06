@@ -16,7 +16,6 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-import pl.org.hipisi.entities.Order;
 
 
 @Entity
