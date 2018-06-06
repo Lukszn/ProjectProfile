@@ -1,16 +1,22 @@
 package pl.lukszn.ProjectProfile.models;
 
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+
+import pl.org.hipisi.entities.Order;
 
 
 @Entity
@@ -36,6 +42,8 @@ public class User {
 	
 	private String permission;
 	
+	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
+	private List<Account> accounts;
 		
 
 	public User(String login, String password, String email) {
@@ -82,5 +90,15 @@ public class User {
 	public void setPermission(String permissions) {
 		this.permission = permissions;
 	}
+
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+	
+	
 	
 }
