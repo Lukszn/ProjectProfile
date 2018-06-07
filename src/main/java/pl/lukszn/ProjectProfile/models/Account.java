@@ -16,6 +16,8 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	private boolean ifBasicAccount;
+	
 	private String accTitle;
 	
 	private String accDescription;
@@ -69,7 +71,13 @@ public class Account {
 		this.page = page;
 	}
 	
-	
+	public boolean isIfBasicAccount() {
+		return ifBasicAccount;
+	}
+
+	public void setIfBasicAccount(boolean ifBasicAccount) {
+		this.ifBasicAccount = ifBasicAccount;
+	}
 	
 	
 }

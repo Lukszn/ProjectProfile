@@ -1,8 +1,8 @@
 package pl.lukszn.ProjectProfile.controllers;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import pl.lukszn.ProjectProfile.models.User;
+
 import pl.lukszn.ProjectProfile.models.Account;
 import pl.lukszn.ProjectProfile.repositories.AccountRepository;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
@@ -37,6 +38,7 @@ public class AccountController {
 	@RequestMapping(method = RequestMethod.POST, value ="addAccount")
 	public String addAccount(@ModelAttribute Account account, HttpSession session) {
 		User user = userRepository.findOne((Long) session.getAttribute("user_id"));
+		account.setIfBasicAccount(false);
 		account.setUser(user);
 		accountRepository.save(account);
 		return "redirect:/accounts";
@@ -44,7 +46,8 @@ public class AccountController {
 	
 	@RequestMapping("/accounts")
 	public String accountList(Model model, HttpSession ses) {
-		List<Account> accounts = accountRepository.findAll();
+		long user_Id = (Long) ses.getAttribute("user_id");
+		List<Account> accounts = accountRepository.findUserAccount(user_Id);
 		model.addAttribute("accounts", accounts);
 		return "accounts";
 	}
