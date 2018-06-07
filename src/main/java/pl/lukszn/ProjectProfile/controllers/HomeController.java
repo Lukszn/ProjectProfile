@@ -26,7 +26,7 @@ public class HomeController {
 	
 		
 	
-	@RequestMapping("/")
+	@RequestMapping(value="/")
 	public String loginRegister(HttpSession session, Model model) {
 		if(session.getAttribute("user_id")!=null) {
 			return "index";
