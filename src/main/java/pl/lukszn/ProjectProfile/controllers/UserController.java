@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.lukszn.ProjectProfile.models.User;
+import pl.lukszn.ProjectProfile.repositories.AccountRepository;
+import pl.lukszn.ProjectProfile.repositories.PageRepository;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
@@ -25,6 +27,11 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Autowired
+	AccountRepository accountRepository;
+	
+	@Autowired
+	PageRepository pageRepository;
 		
 	@ModelAttribute(name = "users")
 	public List<User> getUsers(){
