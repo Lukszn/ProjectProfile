@@ -13,7 +13,7 @@
 <body>
 <div align="center">
 <table class="table table-striped">
-<c:forEach items="${accounts}" var="account" begin="1" varStatus="theCount">
+<c:forEach items="${accounts}" var="account" begin="0" varStatus="theCount">
 Konto:
 	<tr>
 		<td>${theCount.index}</td>

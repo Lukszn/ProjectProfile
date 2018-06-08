@@ -13,6 +13,6 @@ import pl.lukszn.ProjectProfile.models.User;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
 	
-//	@Query("Select a from Account a where a.user_id ='user_id'")
-//	List<Account> findUserAccount(@Param("user_Id") long id);
+	@Query(value = "select * from accounts where user_id =:userId", nativeQuery = true)
+	List<Account> findUserAccounts(@Param("userId") long userId);
 }
