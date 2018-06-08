@@ -47,7 +47,7 @@ public class AccountController {
 	@RequestMapping("/accounts")
 	public String accountList(Model model, HttpSession ses) {
 		long user_Id = (Long) ses.getAttribute("user_id");
-		List<Account> accounts = accountRepository.findUserAccount(user_Id);
+		List<Account> accounts = accountRepository.findAll();
 		model.addAttribute("accounts", accounts);
 		return "accounts";
 	}
