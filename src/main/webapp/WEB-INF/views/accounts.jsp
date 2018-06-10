@@ -4,7 +4,7 @@
     <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
      <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<style><%@ include file="/WEB-INF/parts/header.jsp" %></style>
+<%@ include file="/WEB-INF/parts/header.jsp" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +16,7 @@
 <c:forEach items="${accounts}" var="account" begin="0" varStatus="theCount">
 Konto:
 	<tr>
-		<td>${theCount.index}</td>
+		<td>${theCount.index+1}</td>
 		<td><b>Nazwa: </b>${account.accTitle}</td>
 		<td><b>Opis: </b>${account.accDescription}</td>
 		
