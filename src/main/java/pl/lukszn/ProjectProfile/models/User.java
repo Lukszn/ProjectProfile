@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -19,7 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-
+import pl.lukszn.ProjectProfile.models.Member;
 
 
 @Entity
@@ -52,6 +53,8 @@ public class User implements Serializable{
 	
 	@OneToMany()
 	private List<Account> accounts;
+	
+	
 		
 
 	public User(final String login, final String password, final String email) {
@@ -109,6 +112,7 @@ public class User implements Serializable{
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
 	}
+
 
 	public static User of(String login, String password, String email) {
 		// TODO Auto-generated method stub

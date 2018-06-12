@@ -26,6 +26,10 @@ ${user.login}
      <a href="<c:url value="/accounts"/>">Add Account</a>
      </c:if>
       </li>
+       <li><c:if test="${sessionScope.user_permission != null}">
+     <a href="<c:url value="/members"/>">Add member</a>
+     </c:if>
+      </li>
 
     </ul>
     <ul>

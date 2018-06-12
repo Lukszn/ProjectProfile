@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import pl.lukszn.ProjectProfile.models.Member;
+
 @Entity
 @Table(name = "accounts")
 public class Account {
@@ -28,6 +30,9 @@ public class Account {
 	
 	@ManyToOne
 	private User user;
+	
+	@ManyToOne
+	private Member member;
 
 	
 	public Account() {
@@ -73,9 +78,13 @@ public class Account {
 		this.ifBasicAccount = ifBasicAccount;
 	}
 
+	public Member getMember() {
+		return member;
+	}
 
-	
-	
+	public void setMember(Member member) {
+		this.member = member;
+	}	
 	
 	
 }

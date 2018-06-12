@@ -19,7 +19,6 @@ import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
 	
 	@Autowired
