@@ -50,7 +50,7 @@ public class User implements Serializable{
 	
 	private String permission;
 	
-	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
+	@OneToMany()
 	private List<Account> accounts;
 		
 

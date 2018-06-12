@@ -11,6 +11,7 @@ pl/lukszn/ProjectProfile/converters/UserConverter.class
 pl/lukszn/ProjectProfile/filters/CheckAdminPermission.class
 pl/lukszn/ProjectProfile/controllers/UserController.class
 pl/lukszn/ProjectProfile/models/User.class
+pl/lukszn/ProjectProfile/controllers/PageController.class
 pl/lukszn/ProjectProfile/repositories/AccountRepository.class
 pl/lukszn/ProjectProfile/repositories/UserRepository.class
 pl/lukszn/ProjectProfile/models/Account.class

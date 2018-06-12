@@ -19,16 +19,12 @@ import pl.lukszn.ProjectProfile.repositories.UserRepository;
 
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/")
 public class HomeController {
 	
 	@Autowired
 	UserRepository userRepository;
-	
-	@RequestMapping("/api/hi")
-	public String hi() {
-		return "Hello World from Restful API PROJECT PROFILE";
-	}
+
 	
 	@RequestMapping(value="/")
 	public String loginRegister(HttpSession session, Model model) {

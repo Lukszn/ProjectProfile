@@ -24,7 +24,6 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import pl.lukszn.ProjectProfile.converters.PageConverter;
 
 
 
@@ -81,17 +80,17 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("resources/**").addResourceLocations("/resources/");
 		registry.addResourceHandler("views/static/**").addResourceLocations("/WEB-INF/views/static/");
 		}
-	
-	@Override
-	public void addFormatters(FormatterRegistry registry) {
-		registry.addConverter(getPageConverter());
-	}
-	
-
-	@Bean
-	public PageConverter getPageConverter() {
-		return new PageConverter();
-	}
+//	
+//	@Override
+//	public void addFormatters(FormatterRegistry registry) {
+//		registry.addConverter(getPageConverter());
+//	}
+//	
+//
+//	@Bean
+//	public PageConverter getPageConverter() {
+//		return new PageConverter();
+//	}
 	
 }
 
