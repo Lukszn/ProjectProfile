@@ -60,6 +60,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
+		
 		return viewResolver;
 	}
 
@@ -77,8 +78,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/recources/**").addResourceLocations("/WEB-INF/resources/").setCachePeriod(31556926);
-    }
+		registry.addResourceHandler("resources/**").addResourceLocations("/resources/");
+		registry.addResourceHandler("views/static/**").addResourceLocations("/WEB-INF/views/static/");
+		}
 	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
