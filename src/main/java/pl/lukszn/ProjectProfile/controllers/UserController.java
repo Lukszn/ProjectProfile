@@ -64,8 +64,6 @@ public class UserController {
 			return "index";
 		}	
 	}
-
-	
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String editUserForm(Model model, @PathVariable long id) {

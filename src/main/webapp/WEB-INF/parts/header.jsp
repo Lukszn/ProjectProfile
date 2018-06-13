@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<nav class="navbar navbar-inverse">
+  <style> <%@ include file="/WEB-INF/css/style.css"%> </style>
+  <header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">ProjectProfile</a>
@@ -22,18 +24,32 @@
       		<a href="<c:url value="/logout"/>"><strong>Logout</strong></a>
       	</c:if>
       </li>
-      <li><c:if test="${sessionScope.user_permission != null}">
-     <a href="<c:url value="/accounts"/>">Add Account</a>
-     </c:if>
-
+      <c:if test="${sessionScope.user_permission != null}">
+     <li class="nav-item dropdown">
+     	
+			<button class="dropbtn"><strong>Account</strong></button>
+			<div class="dropdown-content">
+				<a href="<c:url value="/accounts"/>">Add new account</a>
+				<a href="<c:url value="/editAccountForm"/>">Edit accounts</a>
+			</div>
+			</li>
+		</c:if>
+		
+	
     </ul>
+    <div class="dropdown">
+ 			<span>Accounts</span>
+  			<div class="dropdown-content">
+   			 <a href="<c:url value="/accounts"/>">Add new account</a>
+				<a href="<c:url value="/editAccountForm"/>">Edit accounts</a>
+  			</div>
+		</div>
     <ul>
-    <li style="float:right"><c:if test="${sessionScope.user_permission != null}">
-   <a href="<c:url value="/editAccountForm"/>">Edit Account</a>
-     </c:if>
+   
      
-     
-      </li>
+     <li class="nav-item" style="float:right"><a class="nav-link" href="<c:url value="/profile"/>"><strong>Profile</strong></a>
+				</li>
+      
     </ul>
    <c:if test="${sessionScope.user_permission == null}">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,3 +76,5 @@
        </div>
        </c:if>
   </div>
+  </nav>
+  </header>
