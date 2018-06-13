@@ -32,6 +32,8 @@ public class HomeController {
 		}else {
 			User user = new User();
 			model.addAttribute("user",user);
+			String userLogin = user.getLogin();
+			model.addAttribute("userLogin", userLogin);
 			return "login";
 		}
 	}
@@ -93,6 +95,7 @@ public class HomeController {
 	public String adminPage() {
 		return "adminPage";
 	}
+	
 	
 	@RequestMapping("/not_permission")
 	public String notPermission() {

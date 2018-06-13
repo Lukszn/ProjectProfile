@@ -17,6 +17,7 @@
 
 <div>
 	<h3><strong>${message}</strong></h3>
+
 </div>
 </body>
 </html>

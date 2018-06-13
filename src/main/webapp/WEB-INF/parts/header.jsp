@@ -3,7 +3,7 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 
-${user.login}
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,17 +25,14 @@ ${user.login}
       <li><c:if test="${sessionScope.user_permission != null}">
      <a href="<c:url value="/accounts"/>">Add Account</a>
      </c:if>
-      </li>
-       <li><c:if test="${sessionScope.user_permission != null}">
-     <a href="<c:url value="/members"/>">Add member</a>
-     </c:if>
-      </li>
 
     </ul>
     <ul>
     <li style="float:right"><c:if test="${sessionScope.user_permission != null}"><b>User:</b>
-   ${user.getLogin()}
+  ${user.login}
      </c:if>
+     
+     
       </li>
     </ul>
    <c:if test="${sessionScope.user_permission == null}">

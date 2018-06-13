@@ -20,7 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import pl.lukszn.ProjectProfile.models.Member;
+
 
 
 @Entity
@@ -113,6 +113,11 @@ public class User implements Serializable{
 		this.accounts = accounts;
 	}
 
+
+	@Override
+	public String toString() {
+		return "User [login=" + login + "]";
+	}
 
 	public static User of(String login, String password, String email) {
 		// TODO Auto-generated method stub

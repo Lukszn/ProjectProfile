@@ -89,6 +89,7 @@
 <div id="sidebar-right">
 	<a href="<c:url value="/registerUser"/>"><strong>Register</strong></a>
     <hr>
+    
     <c:url var="addUrl" value="/register"/>
     <form:form method="post" role="form" action="${addUrl}" modelAttribute="user">
     
@@ -112,6 +113,7 @@
           
 	</form:form>
 	</div>
+	
 	<div id="footer">Footer</div>
 </body>
 </html>
