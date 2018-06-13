@@ -20,7 +20,7 @@ Konto:
 		<td><b>Nazwa: </b>${account.accTitle}</td>
 		<td><b>Opis: </b>${account.accDescription}</td>
 		<td><a style="width: 180px;height: 20px;" href="./edit/${account.id}" class="badge badge-primary">Edit</a></td>
-		
+		<td><a style="width: 180px;height: 20px;" href="./delete/${account.id}" class="badge badge-danger">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>

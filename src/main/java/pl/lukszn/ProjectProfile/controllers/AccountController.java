@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.lukszn.ProjectProfile.models.User;
-
 import pl.lukszn.ProjectProfile.models.Account;
 import pl.lukszn.ProjectProfile.repositories.AccountRepository;
 import pl.lukszn.ProjectProfile.repositories.UserRepository;
@@ -68,6 +67,23 @@ public class AccountController {
 		accountToUpdate.setAccTitle(account.getAccTitle());
 		accountToUpdate.setAccDescription(account.getAccDescription());
 		accountRepository.save(accountToUpdate);
+		return "redirect:/accounts";
+	}
+	
+	@RequestMapping("/delete")
+	public String deleteAccount(Model model) {
+		return "deleteAccount";
+	}
+	
+	@RequestMapping("/read/{id}")
+	public String read(@PathVariable long id) {
+		return accountRepository.findOne(id).toString();
+	}
+	
+	@RequestMapping("/delete/{id}")
+	public String delete(@PathVariable long id) {
+		Account account = accountRepository.findOne(id);
+		accountRepository.delete(account);
 		return "redirect:/accounts";
 	}
 }
