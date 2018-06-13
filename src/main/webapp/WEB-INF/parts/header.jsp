@@ -28,8 +28,8 @@
 
     </ul>
     <ul>
-    <li style="float:right"><c:if test="${sessionScope.user_permission != null}"><b>User:</b>
-  ${user.login}
+    <li style="float:right"><c:if test="${sessionScope.user_permission != null}">
+   <a href="<c:url value="/editAccountForm"/>">Edit Account</a>
      </c:if>
      
      
