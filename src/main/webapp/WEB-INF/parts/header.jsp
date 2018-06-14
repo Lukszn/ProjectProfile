@@ -2,57 +2,43 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style> <%@ include file="/WEB-INF/css/style.css"%> </style>
-  <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">ProjectProfile</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="<c:url value="/"/>">Home</a></li>
-       <li><c:if test="${sessionScope.user_permission == 'admin'}">
-     		<a href="<c:url value="/admin"/>"><strong>Admin</strong></a>
-		</c:if></li>
-      <li><c:if test="${sessionScope.user_permission != null}">
-      		<a href="<c:url value="/logout"/>"><strong>Logout</strong></a>
-      	</c:if>
-      </li>
-      <c:if test="${sessionScope.user_permission != null}">
-     <li class="nav-item dropdown">
-     	
-			<button class="dropbtn"><strong>Account</strong></button>
-			<div class="dropdown-content">
-				<a href="<c:url value="/accounts"/>">Add new account</a>
-				<a href="<c:url value="/editAccountForm"/>">Edit accounts</a>
-			</div>
-			</li>
-		</c:if>
-		
-	
-    </ul>
-    <div class="dropdown">
- 			<span>Accounts</span>
-  			<div class="dropdown-content">
-   			 <a href="<c:url value="/accounts"/>">Add new account</a>
-				<a href="<c:url value="/editAccountForm"/>">Edit accounts</a>
-  			</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style> <%@ include file="/WEB-INF/css/header.css"%> </style>
+
+<header>
+<div class="header">
+  <a href="#default" class="logo">ProjectProfile</a>
+  <div class="header-right">
+    <a href="<c:url value="/"/>" clas="active">Home</a>
+    <c:if test="${sessionScope.user_permission == 'admin'}">
+   		<a href="<c:url value="/admin"/>"><strong>Admin</strong></a>
+   	</c:if>
+   	<c:if test="${sessionScope.user_permission != null}">
+   	 	<a href="<c:url value="/logout"/>"><strong>Logout</strong></a>
+   	 	<button class="dropbtn"><strong>Account</strong></button>
+		<div class="dropdown-content">
+			<a href="<c:url value="/accounts"/>">Add new account</a>
+			<a href="<c:url value="/editAccountForm"/>">Edit accounts</a>
 		</div>
-    <ul>
-   
-     
-     <li class="nav-item" style="float:right"><a class="nav-link" href="<c:url value="/profile"/>"><strong>Profile</strong></a>
-				</li>
-      
-    </ul>
-   <c:if test="${sessionScope.user_permission == null}">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<a class="active" href="<c:url value="/profile"/>"><strong>Profile</strong></a>
+   	</c:if>
+  </div>
+</div>
+	
+      		
+       			
+				
+    		
+  			<c:if test="${sessionScope.user_permission == null}">
+      			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
     	<c:url value="/login" var="loginURL"/>
     	<form id="signin" class="navbar-form navbar-right" role="form" method="post" action="${loginURL}">
@@ -76,5 +62,4 @@
        </div>
        </c:if>
   </div>
-  </nav>
   </header>

@@ -11,55 +11,11 @@
 <title>Title</title>
 <style>
 
-			#header{
-				background-color: lightblue;
-				width:100%;
-				height:50px;
-				text-align: center;
-			}
-			#sidebar-left{
-				float:left;
-				width:15%;
-				background-color: gray;
-			}
-			#main{
-				float:left;
-				width:70%;
-				background-color: lightgray;
-			}
-			#sidebar-right{
-				float:left;
-				width:15%;
-				background-color: gray;
-			}
-			#footer{
-				clear:both;
-				height: 50px;
-				width: 100%;
-				text-align: center;
-				background-color: lightblue;
-			}
-			#sidebar-left, #main, #sidebar-right{
-				min-height: 600px				
-			}
 			
-			.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40%;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-    padding: 2px 16px;
-		
 </style>
 </head>
 <body>
-<div id="header"><%@ include file="/WEB-INF/parts/header.jsp" %></div>
+<%@ include file="/WEB-INF/parts/header.jsp" %>
 <div id="sidebar-left">
 
 <nav>
