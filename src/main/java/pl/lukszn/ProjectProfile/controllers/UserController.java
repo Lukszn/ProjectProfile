@@ -88,6 +88,12 @@ public class UserController {
 	public String read(@PathVariable long id) {
 		return userRepository.findOne(id).toString();
 	}
+
+	@RequestMapping("/delete")
+	public String deleteUser(Model model) {
+		return "deleteUser";
+	}
+
 	
 	@RequestMapping("/delete/{id}")
 	public String delete(@PathVariable long id) {
@@ -95,5 +101,4 @@ public class UserController {
 		userRepository.delete(user);
 		return "redirect:/admin/user/delete";
 	}
-	
 }
