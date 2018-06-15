@@ -7,9 +7,10 @@
   <name>ProjectProfile</name>
   <url>http://maven.apache.org</url>
 	<properties>
-		<org.springframework-version>4.3.7.RELEASE
-		</org.springframework-version>
+	
+		<org.springframework-version>4.3.7.RELEASE</org.springframework-version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<m2e.wro4j.wtp.integration>false</m2e.wro4j.wtp.integration>
 	</properties>
 	<dependencies>
 

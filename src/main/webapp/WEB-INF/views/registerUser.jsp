@@ -1,15 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-    <%@ page isELIgnored="false" %>
+<%@ include file="/WEB-INF/parts/header.jsp" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>register</title>
 </head>
 <body>
-<%@ include file="/WEB-INF/parts/header.jsp" %>
+
 <c:url var="addUrl" value="/register/register"/>
     <form:form method="post" role="form" action="${addUrl}" modelAttribute="user">
     
