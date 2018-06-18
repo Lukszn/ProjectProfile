@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
 import pl.lukszn.ProjectProfile.models.User;
 
 public class UserTest {
@@ -50,4 +51,8 @@ public class UserTest {
 		User.of(LOGIN, PASSWORD, null);
 	}
 	
+	@Test
+	public void equality() {
+		EqualsVerifier.forClass(User.class).verify();
+	}
 }  

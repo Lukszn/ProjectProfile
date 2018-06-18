@@ -116,13 +116,34 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [login=" + login + "]";
+		return com.google.common.base.Objects.toStringHelper(this)
+				.add("login", login)
+				.add("email", email)
+				.add("password", password)
+				.toString();
 	}
 
 	public static User of(String login, String password, String email) {
 		// TODO Auto-generated method stub
 		return new User(login, password, email);
 	}
+	
+	@Override
+	public boolean equals(final Object rightSide) {
+		if(!(rightSide instanceof User)) return false;
+		final User that = (User) rightSide;
+		return(this==that) || (
+				getLogin().equals(that.getLogin()) &&
+				getEmail().equals(that.getEmail()) &&
+				getPassword().equals(that.getPassword())
+						);
+	}
+	
+	@Override
+	public int hashCode() {
+		return getLogin().hashCode() + getEmail().hashCode() + getPassword().hashCode();
+	}
+	
 	
 	
 	
