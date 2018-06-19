@@ -1,14 +1,36 @@
-.formSignIn {
+div.containerSignIn{
+ position: relative;
+	
+}
+div.formSignIn {
 	width: 400px;
 	height: 500px;
 	background-color: #eeeeec;
+	font-family: serif;
+    margin: auto;  
+  	position: fixed;
+  	left:0;
+  	right: 0;
+  	top: 0;
+ 	bottom: 0;
+ 	border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #888888;
+
+
 
 }
+div.h1{
+	height: 60px;
+	-webkit-align-self: center;
+	align-self: center;
+}
 .input {
-	width: 250px;
+	width: 230px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: 20px;
+	margin-right: 20px;
 
 
 	
@@ -17,9 +39,29 @@
 h1 {
  	color: #272a35;
 	text-shadow: 2px 2px #729fcf;
-	margin-left: 30px;
+	margin-left: 60px;
+
 }
 
 li {
-		float: right;
+	list-style-type: none;
+	float: right;
+	font-family: "Times New Roman", Times, serif;
+	
+	color: black;
+	
+}
+
+
+
+button.signIn {
+	margin-right: 20px;
+	align-self: center;
+	align-items: center;
+	align-content: center;
+	border-width: 2px;
+	font-weight:bolder;
+	border-color: #80D4EB;
+	background-color: #ffffff;
+	
 }
