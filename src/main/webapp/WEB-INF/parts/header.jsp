@@ -22,15 +22,30 @@
 <header>
 <nav class="nav">
   <ul class="menu">
-    <li class="menu-item"><a href="#">Lorem</a></li>
-    <li class="menu-item"><a href="#">Nobis</a></li>
-    <li class="menu-item"><a href="#">Nostrum</a></li>
-    <li class="menu-item"><a href="#">Quia</a></li>
-    <li class="menu-item"><a href="#">Non</a></li>
-    <li class="menu-item"><a href="#">Voluptate</a></li>
-    <li class="menu-item"><a href="#">Magni</a></li>
+    <li class="menu-item"><a href="<c:url value="/"/>">ProjectProfile</a></li>
+    <li class="menu-item"><a href="<c:url value="/"/>">Home</a></li>
+    <c:if test="${sessionScope.user_permission == 'admin'}">
+    <li class="menu-item"><a href="<c:url value="/admin"/>">Admin</a></li>
+    </c:if>
+    <c:if test="${sessionScope.user_permission != null}">
+    <li class="menu-item"><a href="<c:url value="/accounts"/>">Add new account</a></li>
+    <li class="menu-item"><a href="<c:url value="/profile"/>">Profile</a></li>
+    <li class="menu-item"><a href="<c:url value="/logout"/>">Logout</a></li>
+    </c:if>
+    <c:if test="${sessionScope.user_permission == null}">
+    <div class="div-nav">
+    <c:url value="/login" var="loginURL"/>
+    	<form class="form-nav" id="signin" role="form" method="post" action="${loginURL}">
+			<input class="form"  id="basic-addon2" type="text" name="login" value="" placeholder="Login">                                        
+        	<input class="form" id="password" type="password" name="password" value="" placeholder="Password">   
+        	<button type="submit">Login</button>
+        </form>
+        </div>
+     </c:if>
   </ul><!-- .menu -->
-</nav><!-- .nav -->
+  
+</nav>
+<!-- .nav -->
 <!--  <div class="header">
   <a href="#default" class="logo">ProjectProfile</a>
   <div class="header-right">
