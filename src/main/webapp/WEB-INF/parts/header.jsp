@@ -36,8 +36,8 @@
     <div class="div-nav">
     <c:url value="/login" var="loginURL"/>
     	<form class="form-nav" id="signin" role="form" method="post" action="${loginURL}">
-			<input class="form"  id="basic-addon2" type="text" name="login" value="" placeholder="Login">                                        
-        	<input class="form" id="password" type="password" name="password" value="" placeholder="Password">   
+			<input class="form-nav"  id="basic-addon2" type="text" name="login" value="" placeholder="Login">                                        
+        	<input class="form-nav" id="password" type="password" name="password" value="" placeholder="Password">   
         	<button type="submit">Login</button>
         </form>
         </div>

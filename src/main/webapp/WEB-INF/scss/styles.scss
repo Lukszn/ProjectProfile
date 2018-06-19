@@ -85,6 +85,7 @@ header styling
       &:focus {
         color: $menu-item-hover-color;
         background-color: $menu-item-hover-bg;
+        
       }
     }
   }
@@ -133,5 +134,6 @@ button {
 
 .form-nav {
 	margin: 0;
-	padding: 1em 0;
+	padding: 1em 1;
+	
 }
