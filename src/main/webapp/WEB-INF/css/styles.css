@@ -65,18 +65,10 @@ header styling
 
 */
 body {
-  color: #ebe8e8;
-  background-color: #28292c;
+  background-image: url("/static/images/dark_Tire.png");
 }
 
-input[type=text] {
-  border: 2px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  padding: 10px;
-}
-
-input[type=password] {
+input[type=text], input[type=password] {
   border: 2px;
   border-radius: 5px;
   background-color: #ffffff;
@@ -108,7 +100,7 @@ button {
 }
 
 div.background {
-  background: #F2s2g6 url("../WEB-INF/images/dark_Tire.png") no-repeat right top;
+  background: #F2s2g6 url("	../WEB-INF/images/dark_Tire.png") no-repeat right top;
 }
 
 /*# sourceMappingURL=css/styles.css.map */
