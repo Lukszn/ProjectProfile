@@ -65,7 +65,16 @@ public class AccountController {
 	public String editAccount(@ModelAttribute Account account, @PathVariable long id) {
 		Account accountToUpdate = accountRepository.findOne(id);
 		accountToUpdate.setAccTitle(account.getAccTitle());
-		accountToUpdate.setAccDescription(account.getAccDescription());
+		accountToUpdate.setAccFirstName(account.getAccFirstName());
+		accountToUpdate.setAccLastName(account.getAccLastName());
+		accountToUpdate.setAccBirthdate(account.getAccBirthdate());
+		accountToUpdate.setAccPhoneNumber(account.getAccPhoneNumber());
+		accountToUpdate.setAccEducation(account.getAccEducation());
+		accountToUpdate.setAccExperience(account.getAccExperience());
+		accountToUpdate.setAccAbilities(account.getAccAbilities());
+		accountToUpdate.setAccInterests(account.getAccInterests());
+		accountToUpdate.setAccProjects(account.getAccProjects());
+		accountToUpdate.setAccAboutMe(account.getAccAboutMe());
 		accountRepository.save(accountToUpdate);
 		return "redirect:/accounts";
 	}

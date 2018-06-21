@@ -32,19 +32,19 @@ public class Account {
 	
 	private String accBirthdate;
 	
-	private int phoneNumber;
+	private String accPhoneNumber;
 	
-	private String education;
+	private String accEducation;
 	
-	private String experience;
+	private String accExperience;
 	
-	private String abilities;
+	private String accAbilities;
 	
-	private String interests;
+	private String accInterests;
 	
-	private String projects;
+	private String accProjects;
 	
-	private String aboutMe;
+	private String accAboutMe;
 	
 	@ManyToOne
 	private User user;
@@ -94,60 +94,60 @@ public class Account {
 		this.accBirthdate = accBirthdate;
 	}
 
-	public int getPhoneNumber() {
-		return phoneNumber;
+	public String getAccPhoneNumber() {
+		return accPhoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setAccPhoneNumber(String accPhoneNumber) {
+		this.accPhoneNumber = accPhoneNumber;
 	}
 
-	public String getEducation() {
-		return education;
+	public String getAccEducation() {
+		return accEducation;
 	}
 
-	public void setEducation(String education) {
-		this.education = education;
+	public void setAccEducation(String accEducation) {
+		this.accEducation = accEducation;
 	}
 
-	public String getExperience() {
-		return experience;
+	public String getAccExperience() {
+		return accExperience;
 	}
 
-	public void setExperience(String experience) {
-		this.experience = experience;
+	public void setAccExperience(String accExperience) {
+		this.accExperience = accExperience;
 	}
 
-	public String getAbilities() {
-		return abilities;
+	public String getAccAbilities() {
+		return accAbilities;
 	}
 
-	public void setAbilities(String abilities) {
-		this.abilities = abilities;
+	public void setAccAbilities(String accAbilities) {
+		this.accAbilities = accAbilities;
 	}
 
-	public String getInterests() {
-		return interests;
+	public String getAccInterests() {
+		return accInterests;
 	}
 
-	public void setInterests(String interests) {
-		this.interests = interests;
+	public void setAccInterests(String accInterests) {
+		this.accInterests = accInterests;
 	}
 
-	public String getProjects() {
-		return projects;
+	public String getAccProjects() {
+		return accProjects;
 	}
 
-	public void setProjects(String projects) {
-		this.projects = projects;
+	public void setAccProjects(String accProjects) {
+		this.accProjects = accProjects;
 	}
 
-	public String getAboutMe() {
-		return aboutMe;
+	public String getAccAboutMe() {
+		return accAboutMe;
 	}
 
-	public void setAboutMe(String aboutMe) {
-		this.aboutMe = aboutMe;
+	public void setAccAboutMe(String accAboutMe) {
+		this.accAboutMe = accAboutMe;
 	}
 
 	public User getUser() {
