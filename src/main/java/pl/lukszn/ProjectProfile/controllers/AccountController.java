@@ -74,7 +74,7 @@ public class AccountController {
 		accountToUpdate.setAccAbilities(account.getAccAbilities());
 		accountToUpdate.setAccInterests(account.getAccInterests());
 		accountToUpdate.setAccProjects(account.getAccProjects());
-		accountToUpdate.setAccAboutMe(account.getAccAboutMe());
+		accountToUpdate.setAccDescription(account.getAccDescription());
 		accountRepository.save(accountToUpdate);
 		return "redirect:/accounts";
 	}

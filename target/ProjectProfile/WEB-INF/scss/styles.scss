@@ -1,0 +1,135 @@
+$color-button-border: #0a4458;
+$color-header: $color-button-border;
+$body-color: #28292c;
+$body-text-color: #ebe8e8;
+
+$menu-color: rgba(white, .75);
+$menu-bg: #222;
+$menu-item-color: $menu-color;
+$menu-item-hover-color: rgba(lightblue, .5);
+$menu-item-hover-bg: black;
+$menu-item-border-color: lighten($menu-bg, 3%);
+
+
+/**
+
+header styling
+*/
+
+
+/* 1. Menu settings */
+.menu {
+
+  /* 1.1 Reset */
+  &,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 1.2 Sizing-up links */
+  a {
+    font-weight: 800;
+    padding: 27px 20px;
+    transition: background .25s ease-in-out;
+    
+  }
+  
+  /* 1.3 List-items */
+  li {
+    position: relative;
+    border-width: 0 0 0px;
+    border-style: solid;
+    &:last-child {
+      border-width: 0;
+    }
+  }
+  
+  /* 1.4 Default display for menu-items and links */
+  li,
+  a {
+    display: inline-table;
+  }
+}
+
+/* 2. Screen settings */
+@media only screen and (min-width: 1024px) {
+  
+  /* 2.1 Flex-display of `.menu` for desktop */
+  .menu {
+    display: flex;
+    flex-flow: row wrap;
+    
+    /* 2.1.1 Border adjustments for menu-items */
+    li {
+      border-width: 0 1px 0 0;
+    }
+  }
+}
+
+.nav {
+  background-color: $menu-bg;
+}
+
+.menu {
+  li {
+    border-color: $menu-item-border-color;
+    &.menu-item-current {
+      
+    }
+    a {
+    text-decoration: none;
+      color: $menu-item-color;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $menu-item-hover-color;
+        background-color: $menu-item-hover-bg;
+        
+      }
+    }
+  }
+}
+/**
+
+
+*/
+body {
+
+	background-image: url("/static/images/dark_Tire.png");
+	
+}
+input[type=text], input[type=password]{
+	border: 2px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+button {
+	background-color: lightdark;
+	border-radius: 5px;
+	border: 1px solid $color-button-border;
+	color: $color-button-border;
+	padding: 10px;
+}
+
+.box {
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	text-align: center;
+	padding: 20px; 
+}
+
+.div-nav {
+	float: right;
+}
+
+.form-nav {
+	margin: 0;
+	padding: 1em 1;
+	
+}
+div.background {
+	background: #F2s2g6 url("	../WEB-INF/images/dark_Tire.png") no-repeat right top; 
+}

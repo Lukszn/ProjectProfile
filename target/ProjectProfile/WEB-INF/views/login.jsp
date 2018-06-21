@@ -1,43 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-    <%@ page isELIgnored="false" %>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-<head>
-<title>Title</title>
-<style>
-
-</style>
-</head>
-<body>
+    pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/parts/header.jsp" %>
-	<a href="<c:url value="/registerUser"/>"><strong>Register</strong></a>
-    <hr>
-    <c:url var="addUrl" value="/register"/>
-    <form:form method="post" role="form" action="${addUrl}" modelAttribute="user">
-    
-		<h1>Create an Account</h1>
-		
-		Login: 
-		<form:input path="login" id="loginForm" placeholder="Login" required="required" class="input pass"/>
-		<form:errors path="login" cssClass="error" /><br>
-		
-		Email:
-		<form:input path="email" id="emailForm" placeholder="Email address" required="required" class="input pass"/>
-        <form:errors path="email" cssClass="error"/><br>
-        
-        Password:
-        <form:input path="password" id="password" type="password" placeholder="Choose a password" required="required" class="input pass"/>
-        <form:errors path="password" cssClass="error"/><br>
-        
-        Confirm password:
-        <input name="userpw2" id="confirmPassword" type="password" placeholder="Confirm password" required="required" class="input pass"/>
-        <input type="submit" value="Sign me up!" class="inputButton" id="signUpButton"/>  
-          
-	</form:form>
+
+<head>
+
+	<title>Strona Główna</title>
+	<style> <%@ include file="/WEB-INF/css/signIn.css"%> </style>
+</head>
+<body style="background-image: url(<c:url value="/static/images/dark_Tire.png"/>)">
+
+<nav>
+  
+ 
+</nav>
+<div class="containerSignInr">
+	<div class="formSignIn">
+	 
+        <c:url var="addUrl" value="/register"/>
+            <form:form class="form" id="signup" method="post" role="form" action="${addUrl}" modelAttribute="user">
+            <div class="h1">
+               <h1 class="inset-text-effect">Register</h1>
+                <hr>
+            </div>
+                <ul>
+				<li><b>Login:</b> <form:input class="input" path="login" id="loginForm" placeholder="Login" required="required" /></li>
+				<form:errors path="login" cssClass="error" />
+				<li><b>Email:</b> <form:input class="input" path="email" id="emailForm" placeholder="Email address" required="required" /></li>
+                <form:errors path="email" cssClass="error"/>
+                <li><b>Password:</b> <form:input class="input" path="password" id="password" type="password" placeholder="Choose a password" required="required" /></li>
+                <form:errors path="password" cssClass="error"/>
+                <li><b>Confirm:</b> <input class="input" name="userpw2" id="confirmPassword" type="password" placeholder="Confirm password" required="required" /></li>
+                <center><button class="signIn">Register</button></center>
+                </ul>
+            </form:form>
+	</div>
+</div>
+	
+
+
+
+
+
+
 </body>
 </html>

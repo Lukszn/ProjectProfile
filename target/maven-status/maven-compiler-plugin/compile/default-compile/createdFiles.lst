@@ -1,17 +1,13 @@
-pl/lukszn/ProjectProfile/repositories/PageRepository.class
 pl/lukszn/ProjectProfile/controllers/AccountController.class
 pl/lukszn/ProjectProfile/config/AppConfig.class
 pl/lukszn/ProjectProfile/config/AppInitializer.class
 pl/lukszn/ProjectProfile/filters/CheckIfLogin.class
-pl/lukszn/ProjectProfile/models/Page.class
 pl/lukszn/ProjectProfile/controllers/HomeController.class
-pl/lukszn/ProjectProfile/converters/PageConverter.class
 pl/lukszn/ProjectProfile/controllers/ProfileController.class
 pl/lukszn/ProjectProfile/converters/UserConverter.class
 pl/lukszn/ProjectProfile/filters/CheckAdminPermission.class
 pl/lukszn/ProjectProfile/controllers/UserController.class
 pl/lukszn/ProjectProfile/models/User.class
-pl/lukszn/ProjectProfile/controllers/PageController.class
 pl/lukszn/ProjectProfile/repositories/AccountRepository.class
 pl/lukszn/ProjectProfile/repositories/UserRepository.class
 pl/lukszn/ProjectProfile/models/Account.class

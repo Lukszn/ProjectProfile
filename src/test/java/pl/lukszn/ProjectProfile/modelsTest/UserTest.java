@@ -51,8 +51,8 @@ public class UserTest {
 		User.of(LOGIN, PASSWORD, null);
 	}
 	
-	@Test
-	public void equality() {
-		EqualsVerifier.forClass(User.class).verify();
-	}
+//	@Test
+//	public void equality() {
+//		EqualsVerifier.forClass(User.class).verify();
+//	}
 }  

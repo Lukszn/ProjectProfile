@@ -15,10 +15,38 @@
 		<h1>Create an Account</h1>
 		
 		Title: 
-		<form:input path="accTitle" placeholder="Title" required="required" class="input pass"/>
+		<form:input path="accTitle" placeholder="Title" required="required"/>
 	
-		Description:
-		<form:input path="accDescription" placeholder="Description" required="required" class="input pass"/>
+		First Name::
+		<form:input path="accFirstName" placeholder="First Name" required="required"/>
+		
+		Last Name: 
+		<form:input path="accLastName" placeholder="Last Name"/>
+		
+		Birthdate:
+		<form:input path="accBirthdate" placeholder="Birthdate"/>
+		
+		Phone Number:
+		<form:input path="accPhoneNumber" placeholder="Phone Number:"/>
+		
+		Education:
+		<form:input path="accEducation" placeholder="Education"/>
+		
+		Experience:
+		<form:input path="accExperience" placeholder="Experience"/>
+		
+		Abilities:
+		<form:input path="accAbilities" placeholder="Abilities"/>
+		
+		Interests:		
+		<form:input path="accInterests" placeholder="Interests"/>
+		
+		Projects:
+		<form:input path="accProjects" placeholder="URL to your projects"/>
+		
+		About You:
+		<form:input path="accAboutMe" placeholder="Write something sensible"/>
+		
       
         
         <input type="submit" value="Add Account" class="inputButton" id="signUpButton"/>  

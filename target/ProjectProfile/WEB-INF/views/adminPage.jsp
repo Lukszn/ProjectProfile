@@ -9,5 +9,13 @@
 </head>
 <body>
 <h1>Admin Page<h1></h1>
+<table class="table">
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+   
+     <td> <a href="<c:url value="./admin/user/delete"/>"><strong>DeleteUser</strong></a></td>
+    </tr>
+  </tbody>
 </body>
 </html>

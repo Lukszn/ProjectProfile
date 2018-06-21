@@ -44,7 +44,7 @@ public class Account {
 	
 	private String accProjects;
 	
-	private String accAboutMe;
+	private String accDescription;
 	
 	@ManyToOne
 	private User user;
@@ -142,12 +142,13 @@ public class Account {
 		this.accProjects = accProjects;
 	}
 
-	public String getAccAboutMe() {
-		return accAboutMe;
+
+	public String getAccDescription() {
+		return accDescription;
 	}
 
-	public void setAccAboutMe(String accAboutMe) {
-		this.accAboutMe = accAboutMe;
+	public void setAccDescription(String accDescription) {
+		this.accDescription = accDescription;
 	}
 
 	public User getUser() {
