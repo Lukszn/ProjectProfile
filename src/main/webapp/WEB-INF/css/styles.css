@@ -64,8 +64,12 @@ header styling
 
 
 */
-body {
-  background-image: url("../images/bg.jpeg");
+body, html {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-color: #d3d3d3;
+  background: url("static/img/bg.jpeg");
+  font-family: "Oxygen", sans-serif;
 }
 
 input[type=text], input[type=password] {

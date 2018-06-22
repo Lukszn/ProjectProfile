@@ -80,8 +80,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("/resources/").setCachePeriod(31556926);
-		registry.addResourceHandler("views/static/**").addResourceLocations("/WEB-INF/views/static/");
-		}
+    }
 	
 //	@Override
 //	public void addFormatters(FormatterRegistry registry) {
