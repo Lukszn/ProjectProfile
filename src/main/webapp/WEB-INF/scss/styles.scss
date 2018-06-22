@@ -96,7 +96,7 @@ header styling
 */
 body {
 
-	background-image: url("/WEB-INF/images/bg.jpeg");
+	background-image: url("../images/bg.jpeg");
 	
 }
 input[type=text], input[type=password]{
@@ -129,7 +129,4 @@ button {
 	margin: 0;
 	padding: 1em 1;
 	
-}
-div.background {
-	background: #F2s2g6 url("static/images/dark_Tire.png") no-repeat right top; 
 }
