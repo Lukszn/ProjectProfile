@@ -12,9 +12,21 @@
 <body>
 	<form:form method="post" modelAttribute="account">
 		Title: <form:input path="accTitle"/>
-		Description: <form:input path="accDescription"/>
+		First Name: <form:input path="accFirstName"/>
+		Last Name: <form:input path="accLastName"/>
+		Birthdate: <form:input path="accBirthdate"/>
+		Phone number: <form:input path="accPhoneNumber"/>
+		Education: <form:input path="accEducation"/>
+		Experience: <form:input path="accExperience"/>
+		Abilities: <form:input path="accAbilities"/>
+		Interests: <form:input path="accInterests"/>
+		Projects: <form:input path="accProjects"/>
+		About Me: <form:input path="accDescription"/>
 
 		<input type="submit" value="edit">	
 	</form:form>
 </body>
 </html>
+
+
+		

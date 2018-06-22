@@ -7,7 +7,7 @@
 	<title>Strona Główna</title>
 	<style> <%@ include file="/WEB-INF/css/signIn.css"%> </style>
 </head>
-<body style="background-image: url(<c:url value="/static/images/dark_Tire.png"/>)">
+<body>
 
 <nav>
   
