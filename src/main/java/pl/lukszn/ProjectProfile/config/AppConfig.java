@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
 
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +36,8 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "pl.lukszn.ProjectProfile.repositories")
 public class AppConfig extends WebMvcConfigurerAdapter {
+	
+	private int maxUploadSizeInMb = 5 * 1024 * 1024; // 5 MB
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -58,7 +61,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setViewClass(JstlView.class);
-
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
 		
@@ -80,6 +82,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("/resources/").setCachePeriod(31556926);
+    }
+	
+	@Bean
+    public CommonsMultipartResolver multipartResolver() {
+
+        CommonsMultipartResolver cmr = new CommonsMultipartResolver();
+        cmr.setMaxUploadSize(maxUploadSizeInMb * 2);
+        cmr.setMaxUploadSizePerFile(maxUploadSizeInMb); //bytes
+        return cmr;
+
     }
 	
 //	@Override
