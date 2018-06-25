@@ -26,16 +26,18 @@ public class HomeController {
 
 	
 	@RequestMapping(value="/")
-	public String loginRegister(HttpSession session, Model model) {
+	public String loginRegister(HttpSession session, Model model, User user) {
 		if(session.getAttribute("user_id")!=null) {
 			return "index";
 		}else {
-			User user = new User();
+			
 			model.addAttribute("user",user);
-			String userLogin = user.getLogin();
-			model.addAttribute("userLogin", userLogin);
+			
+			model.addAttribute("userLogin", user.getLogin());
 			return "login";
 		}
+		
+	
 	}
 	
 	@RequestMapping("/login")

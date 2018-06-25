@@ -96,11 +96,12 @@ header styling
 */
 body, html{
      height: 100%;
- 	background-repeat: no-repeat;
+ 	background-repeat: repeat;
  	background-color: #d3d3d3;
- 	background: url("static/img/bg.jpeg");
+ 	background: url("static/img/bg.png");
  	font-family: 'Oxygen', sans-serif;
- 	
+ 	color: lightgrey;
+ 	 	
 }
 input[type=text], input[type=password]{
 	border: 2px;

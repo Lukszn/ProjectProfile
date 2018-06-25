@@ -28,8 +28,8 @@
     <li class="menu-item"><a href="<c:url value="/admin"/>">Admin</a></li>
     </c:if>
     <c:if test="${sessionScope.user_permission != null}">
-    <li class="menu-item"><a href="<c:url value="/accounts"/>">Add new account</a></li>
-    <li class="menu-item"><a href="<c:url value="/profile"/>">Profile</a></li>
+    <li class="menu-item"><a href="<c:url value="/accounts"/>">Profiles</a></li>
+    <li class="menu-item"><a href="<c:url value="/profile"/>">Account: ${user.getLogin()}</a></li>
     <li class="menu-item"><a href="<c:url value="/logout"/>">Logout</a></li>
     </c:if>
     <c:if test="${sessionScope.user_permission == null}">
