@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="account">
+<form:form method="post" modelAttribute="account" enctype="multipart/form-data">
     
 		<h1>Create an Account</h1>
 		
@@ -46,6 +46,9 @@
 		
 		About You:
 		<form:input path="accDescription" placeholder="Write something sensible"/>
+		
+		Image::
+		<form:input path="accPicture" type="file"/>
 		
       
         

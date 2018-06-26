@@ -69,6 +69,7 @@ public class UserController {
 	public String editUserForm(Model model, @PathVariable long id) {
 		User user = userRepository.findOne(id);
 		model.addAttribute("user",user);
+		
 		return "editUserForm";
 	}
 	

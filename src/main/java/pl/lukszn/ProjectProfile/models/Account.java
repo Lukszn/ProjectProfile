@@ -1,5 +1,6 @@
 package pl.lukszn.ProjectProfile.models;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -49,6 +50,10 @@ public class Account {
 	
 	@Lob
 	private byte[] accPicture;
+	
+	private String base64;
+	
+	
 	
 	@ManyToOne
 	private User user;
